@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1505561170 source:c:\users\lukas\desktop\ides\codeblocks - c++\physics sim\main.cpp
+	<iostream>
+	<cmath>
+
