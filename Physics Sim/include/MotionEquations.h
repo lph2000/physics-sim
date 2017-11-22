@@ -2,11 +2,11 @@
 #define MOTIONEQUATIONS_H
 
 class MotionEquations {
-    public:
-        float s = 0, u = 0, v = 0, a = 0, t = 0;
-        float g = 9.807;
+    private:
+        float s, u, v, a, t;
 
-        MotionEquations(float s,float u,float v,float a,float t);
+    public:
+        MotionEquations(): s(0), u(0), v(0), a(9.807), t(0){}
 
         // Distance
         float suvatS1(float u,float t,float a);

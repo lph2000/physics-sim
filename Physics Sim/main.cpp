@@ -7,7 +7,6 @@ using namespace std;
 /** Declaring variables and constants **/
 
 float s = 0, u = 0, v = 0, a = 0, t = 0;
-float g = 9.807;
 
 /*
 cout << endl << "Distance per second: " << endl;
@@ -17,8 +16,6 @@ for (float i=0;i<=t;++i) {
 }
 
 */
-
-
 
 int main() {
     // Creating object to allow access to SUVAT equations
