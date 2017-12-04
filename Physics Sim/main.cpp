@@ -4,6 +4,8 @@
 
 using namespace std;
 
+/** TO DO: Create two new .cpp/.h files to place the single/continuous sections in to tidy up main() **/
+
 /** Declaring variables and constants **/
 
 float s = 0, u = 0, v = 0, a = 0, t = 0;
@@ -20,12 +22,12 @@ for (float i=0;i<=t;++i) {
 int main() {
     // Creating object to allow access to SUVAT equations
     MotionEquations MEObject;
-
+    /*
     cout << "Select an option: " << endl;
     cout << "1. Single Result \n" << "2. Data Stream \n" << endl;
     string choice;
     cin >> choice;
-
+    */
     cout << endl << "What value are you trying to find?" << endl;
     cout << "1. Distance \n" << "2. Initial Velocity \n" << "3. Final Velocity \n" << "4. Acceleration \n" << "5. Time" << endl << endl;
     string answer;
@@ -233,12 +235,6 @@ int main() {
             cout << "Value for Distance: ";
             cin >> s;
             cout << endl << "Time: " << MEObject.suvatT2(s,u,v) << " s";
-        }
-        else if(timeCheck == "3") {
-            return 0;
-        }
-        else if(timeCheck == "4") {
-            return 0;
         }
         else {
             cout << "Invalid Choice" << endl;

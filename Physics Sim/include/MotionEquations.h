@@ -6,7 +6,8 @@ class MotionEquations {
         float s, u, v, a, t;
 
     public:
-        MotionEquations(): s(0), u(0), v(0), a(9.807), t(0){}
+        MotionEquations();
+        ~MotionEquations();
 
         // Distance
         float suvatS1(float u,float t,float a);
@@ -35,8 +36,6 @@ class MotionEquations {
         // Time
         float suvatT1(float v,float u,float a);
         float suvatT2(float s,float u,float v);
-        float suvatT3();
-        float suvatT4();
 };
 
 #endif // MOTIONEQUATIONS_H
