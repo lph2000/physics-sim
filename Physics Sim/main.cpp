@@ -1,111 +1,34 @@
 #include <iostream>
 #include <cmath>
+#include "MotionEquations.h"
 
 using namespace std;
+
+/** TO DO: Create two new .cpp/.h files to place the single/continuous sections in to tidy up main() **/
 
 /** Declaring variables and constants **/
 
 float s = 0, u = 0, v = 0, a = 0, t = 0;
-float g = 9.807;
 
-/** SUVAT equations **/
+/*
+cout << endl << "Distance per second: " << endl;
+for (float i=0;i<=t;++i) {
+	float temp = MEObject.suvatS1(u,i,a);
+	cout << i << ": " << temp << "m" << endl;
+}
 
-class MotionEquations {
-    public:
-        // Distance
-        float suvatS1(float u,float t,float a) {
-            s = (u*t) + (a*(t*t))*0.5;
-            return s;
-        }
-        float suvatS2(float u,float v,float t) {
-            s = ((u+v) * t)*0.5;
-            return s;
-        }
-        float suvatS3(float v,float t,float a) {
-            s = (v*t) - (a*(t*t))*0.5;
-            return s;
-        }
-        float suvatS4(float v,float u,float a) {
-            s = ((v*v) - (u*u)) / (2*a);
-            return s;
-        }
-
-        // Initial Velocity
-        float suvatU1(float v,float a,float t) {
-            u = v - (a*t);
-            return u;
-        }
-        float suvatU2(float s,float t,float v) {
-            u = 2*(s/t) - v;
-            return u;
-        }
-        float suvatU3(float v,float a,float s) {
-            u = sqrt((v*v) - (2*a*s));
-            return u;
-        }
-        float suvatU4(float s,float a,float t) {
-            u = (s/t) - (a*t)/2;
-            return u;
-        }
-
-        // Final Velocity
-        float suvatV1(float u,float a,float t) {
-            v = u + (a*t);
-            return v;
-        }
-        float suvatV2(float s,float t,float u) {
-            v = 2*(s/t) - u;
-            return v;
-        }
-        float suvatV3(float u,float a,float s) {
-            v = sqrt((u*u) + (2*a*s));
-            return v;
-        }
-        float suvatV4(float s,float a,float t) {
-            v = (s/t) + (a*t)/2;
-            return v;
-        }
-
-        // Acceleration
-        float suvatA1(float v,float u,float t) {
-            a = (v-u) / t;
-            return a;
-        }
-        float suvatA2(float s,float u,float t) {
-            a = 2*(s-(u*t)) / 2;
-            return a;
-        }
-        float suvatA3(float v,float u,float s) {
-            a = ((v*v) - (u*u)) / (2*s);
-            return a;
-        }
-        float suvatA4(float s,float v,float t) {
-            a = 2*(s+(v*t)) / 2;
-            return a;
-        }
-
-        // Time
-        float suvatT1(float v,float u,float a) {
-            t = (v-u) / a;
-            return t;
-        }
-        float suvatT2(float s,float u,float v) {
-            t = (2*s) / (u+v);
-            return t;
-        }
-        float suvatT3(float ,float ,float ) {
-            t = 0;
-            return t;
-        }
-        float suvatT4(float ,float ,float ) {
-            t = 0;
-            return t;
-        }
-};
+*/
 
 int main() {
+    // Creating object to allow access to SUVAT equations
     MotionEquations MEObject;
-    cout << "What value are you trying to find?" << endl;
+    /*
+    cout << "Select an option: " << endl;
+    cout << "1. Single Result \n" << "2. Data Stream \n" << endl;
+    string choice;
+    cin >> choice;
+    */
+    cout << endl << "What value are you trying to find?" << endl;
     cout << "1. Distance \n" << "2. Initial Velocity \n" << "3. Final Velocity \n" << "4. Acceleration \n" << "5. Time" << endl << endl;
     string answer;
     cin >> answer;
@@ -312,12 +235,6 @@ int main() {
             cout << "Value for Distance: ";
             cin >> s;
             cout << endl << "Time: " << MEObject.suvatT2(s,u,v) << " s";
-        }
-        else if(timeCheck == "3") {
-            return 0;
-        }
-        else if(timeCheck == "4") {
-            return 0;
         }
         else {
             cout << "Invalid Choice" << endl;
