@@ -3,39 +3,39 @@
 
 class MotionEquations {
     private:
-        float s, u, v, a, t;
+        double s, u, v, a, t;
 
     public:
         MotionEquations();
         ~MotionEquations();
 
         // Distance
-        float suvatS1(float u,float t,float a);
-        float suvatS2(float u,float v,float t);
-        float suvatS3(float v,float t,float a);
-        float suvatS4(float v,float u,float a);
+        double suvatS1(double u,double t,double a);
+        double suvatS2(double u,double v,double t);
+        double suvatS3(double v,double t,double a);
+        double suvatS4(double v,double u,double a);
 
         // Initial Velocity
-        float suvatU1(float v,float a,float t);
-        float suvatU2(float s,float t,float v);
-        float suvatU3(float v,float a,float s);
-        float suvatU4(float s,float a,float t);
+        double suvatU1(double v,double a,double t);
+        double suvatU2(double s,double t,double v);
+        double suvatU3(double v,double a,double s);
+        double suvatU4(double s,double a,double t);
 
         // Final Velocity
-        float suvatV1(float u,float a,float t);
-        float suvatV2(float s,float t,float u);
-        float suvatV3(float u,float a,float s);
-        float suvatV4(float s,float a,float t);
+        double suvatV1(double u,double a,double t);
+        double suvatV2(double s,double t,double u);
+        double suvatV3(double u,double a,double s);
+        double suvatV4(double s,double a,double t);
 
         // Acceleration
-        float suvatA1(float v,float u,float t);
-        float suvatA2(float s,float u,float t);
-        float suvatA3(float v,float u,float s);
-        float suvatA4(float s,float v,float t);
+        double suvatA1(double v,double u,double t);
+        double suvatA2(double s,double u,double t);
+        double suvatA3(double v,double u,double s);
+        double suvatA4(double s,double v,double t);
 
         // Time
-        float suvatT1(float v,float u,float a);
-        float suvatT2(float s,float u,float v);
+        double suvatT1(double v,double u,double a);
+        double suvatT2(double s,double u,double v);
 };
 
 #endif // MOTIONEQUATIONS_H

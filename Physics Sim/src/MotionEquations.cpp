@@ -5,101 +5,91 @@
 using namespace std;
 
 MotionEquations::MotionEquations(void){
-    cout << "Program Initialising" << endl;
+
 }
 
 MotionEquations::~MotionEquations(void){
-    cout << endl << endl <<"Program Terminating" << endl;
+
 }
 
 // Distance
-float MotionEquations::suvatS1(float u,float t,float a) {
+double MotionEquations::suvatS1(double u,double t,double a) {
     s = (u*t) + (a*(t*t))*0.5;
     return s;
 }
-
-float MotionEquations::suvatS2(float u,float v,float t) {
+double MotionEquations::suvatS2(double u,double v,double t) {
     s = ((u+v) * t)*0.5;
     return s;
 }
-
-float MotionEquations::suvatS3(float v,float t,float a) {
+double MotionEquations::suvatS3(double v,double t,double a) {
     s = (v*t) - (a*(t*t))*0.5;
     return s;
 }
-
-float MotionEquations::suvatS4(float v,float u,float a) {
+double MotionEquations::suvatS4(double v,double u,double a) {
     s = ((v*v) - (u*u)) / (2*a);
     return s;
 }
 
 // Initial Velocity
-float MotionEquations::suvatU1(float v,float a,float t) {
+double MotionEquations::suvatU1(double v,double a,double t) {
     u = v - (a*t);
     return u;
 }
-float MotionEquations::suvatU2(float s,float t,float v) {
+double MotionEquations::suvatU2(double s,double t,double v) {
     u = 2*(s/t) - v;
     return u;
 }
-float MotionEquations::suvatU3(float v,float a,float s) {
+double MotionEquations::suvatU3(double v,double a,double s) {
     u = sqrt((v*v) - (2*a*s));
     return u;
 }
-float MotionEquations::suvatU4(float s,float a,float t) {
+double MotionEquations::suvatU4(double s,double a,double t) {
     u = (s/t) - (a*t)/2;
     return u;
 }
 
 // Final Velocity
-float MotionEquations::suvatV1(float u,float a,float t) {
+double MotionEquations::suvatV1(double u,double a,double t) {
     v = u + (a*t);
     return v;
 }
-
-float MotionEquations::suvatV2(float s,float t,float u) {
+double MotionEquations::suvatV2(double s,double t,double u) {
     v = 2*(s/t) - u;
     return v;
 }
-
-float MotionEquations::suvatV3(float u,float a,float s) {
+double MotionEquations::suvatV3(double u,double a,double s) {
     v = sqrt((u*u) + (2*a*s));
     return v;
 }
-
-float MotionEquations::suvatV4(float s,float a,float t) {
+double MotionEquations::suvatV4(double s,double a,double t) {
     v = (s/t) + (a*t)/2;
     return v;
 }
 
 // Acceleration
-float MotionEquations::suvatA1(float v,float u,float t) {
+double MotionEquations::suvatA1(double v,double u,double t) {
     a = (v-u) / t;
     return a;
 }
-
-float MotionEquations::suvatA2(float s,float u,float t) {
+double MotionEquations::suvatA2(double s,double u,double t) {
     a = 2*(s-(u*t)) / 2;
     return a;
 }
-
-float MotionEquations::suvatA3(float v,float u,float s) {
+double MotionEquations::suvatA3(double v,double u,double s) {
     a = ((v*v) - (u*u)) / (2*s);
     return a;
 }
-
-float MotionEquations::suvatA4(float s,float v,float t) {
+double MotionEquations::suvatA4(double s,double v,double t) {
     a = 2*(s+(v*t)) / 2;
     return a;
 }
 
 // Time
-float MotionEquations::suvatT1(float v,float u,float a) {
+double MotionEquations::suvatT1(double v,double u,double a) {
     t = (v-u) / a;
     return t;
 }
-
-float MotionEquations::suvatT2(float s,float u,float v) {
+double MotionEquations::suvatT2(double s,double u,double v) {
     t = (2*s) / (u+v);
     return t;
 }
